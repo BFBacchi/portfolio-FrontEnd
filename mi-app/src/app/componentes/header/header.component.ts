@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  
+  esDia: boolean =true;
+esNoche: boolean = false;
 
+cambiaNoche(){
+  return this.esNoche = true
+
+}
+
+cambiaDia(){
+  return this.esDia = true
+
+}
 }
