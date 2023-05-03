@@ -1,0 +1,33 @@
+<!--Hard & Soft skills-->
+<section id="Hard&SoftSkills">
+    <div class="card mt-5 d-flex w-75  mx-auto" >
+     
+      <div class="card-body">
+        
+         <h5 class="card-title">Soft Skills</h5>
+         <div class="container d-flex mt-5"> 
+              
+          <ngx-charts-bar-horizontal
+          [view]="view"
+          scheme="neons"
+          [results]="single2"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          legendTitle="Habilidades"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)">
+        </ngx-charts-bar-horizontal>
+         
+         </div>
+  
+      </div>
+    </div>
+  </section>
+      <!--Hard & Soft skills-->
