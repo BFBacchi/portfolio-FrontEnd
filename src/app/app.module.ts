@@ -14,6 +14,9 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
 import { HardskillsComponent } from './componentes/hardskills/hardskills.component';
 import { SoftskillsComponent } from './componentes/softskills/softskills.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { LoginComponent } from './componentes/login/login.component';
+
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
     EducacionComponent,
     HardskillsComponent,
     SoftskillsComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    HomeComponent,
+    LoginComponent
    
   ],
   imports: [
@@ -36,7 +41,6 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
     NgxChartsModule,
     BrowserAnimationsModule,
     HttpClientModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

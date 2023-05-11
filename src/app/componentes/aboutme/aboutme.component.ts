@@ -1,6 +1,8 @@
 
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { persona } from 'src/app/model/persona.model';
+import { PersonaService } from 'src/app/service/persona.service';
 // importamos las librerias de formulario que vamos a necesitar
 
 
@@ -11,98 +13,16 @@ import { Component } from '@angular/core';
 })
 
 
-
-
-
-
-
-export class AboutmeComponent {
+export class AboutmeComponent implements OnInit {
  
-   view: [number, number] = [900, 400];
-  
-  single = [
-    {
-      "name": "HTML",
-      "value": 25 
-    },
-    {
-      "name": "CSS",
-      "value": 50 
-    },
-    {
-      "name": "Javascript",
-      "value": 35 
-    },
-    {
-      "name": "Java",
-      "value": 5
-    },
-    {
-      "name": "SQL",
-      "value": 10
-    },
-    {
-      "name": "Bootstrap",
-      "value": 45
-    },
-    {
-      "name": "Angular 15",
-      "value": 35
-    }
-  ];
-  single2 = [
-    {
-      "name": "Comunicacion",
-      "value": 80
-    },
-    {
-      "name": "Liderazgo",
-      "value": 85
-    },
-    {
-      "name": "Responsalilidad",
-      "value": 99
-    },
-    {
-      "name": "Creatividad",
-      "value": 95
-    },
-    {
-      "name": "Resolucion de problemas",
-      "value": 89
-    }
-  ];
-  
-  // options
-  showXAxis: boolean = true;
-  showYAxis: boolean = true;
-  gradient: boolean = false;
-  showLegend: boolean = true;
-  showXAxisLabel: boolean = true;
-  yAxisLabel: string = 'Skills';
-  showYAxisLabel: boolean = true;
-  xAxisLabel: string = 'Nivel %';
-
-  colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAABA']
-  };
-
-  constructor() {
+persona: persona = new persona("","","");
+  constructor(public personaService: PersonaService) {
    //this.skillsService.skillsData;
   }
+  ngOnInit(): void {
+    this.personaService.getPersona().subscribe(data => {this.persona=data})
 
-  
-
-  onSelect(data: any): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
 
-  onActivate(data: any): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
-
-  onDeactivate(data: any): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
-  }
 }
 

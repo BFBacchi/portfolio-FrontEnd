@@ -1,4 +1,8 @@
-.name {
-    justify-content: flex-end;
-}
 
+.foto {
+    top: 85%;
+    left: 10px;
+}
+h2 {
+    color: aliceblue;
+}

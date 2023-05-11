@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-hardskills',
@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class HardskillsComponent {
   
  
-    view: [number, number] = [900, 400];
+    view: [number, number] = [window.innerWidth * .5, window.innerHeight * .5];
    
    single = [
      {
@@ -55,10 +55,14 @@ export class HardskillsComponent {
    colorScheme = {
      domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAABA']
    };
+  
  
    constructor() {
-    //this.skillsService.skillsData;
-   }
+    
+  }
+
+  
+  
  
    
  
@@ -73,5 +77,9 @@ export class HardskillsComponent {
    onDeactivate(data: any): void {
      console.log('Deactivate', JSON.parse(JSON.stringify(data)));
    }
+   
+
+   
+
  }
 
