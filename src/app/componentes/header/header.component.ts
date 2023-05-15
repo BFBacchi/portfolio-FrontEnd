@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/service/token.service';
 
 
 @Component({
@@ -7,18 +8,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
+  isLogged= false;
+
+  constructor(private router: Router, private tokenService: TokenService){}
   
-  esDia: boolean =true;
-esNoche: boolean = false;
+ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged=false;
+    }
+}
 
-cambiaNoche(){
-  return this.esNoche = true
+onLogout(): void{
+  this.tokenService.logOut();
+  window.location.reload();
+}
+
+login(){
+  this.router.navigate(['/login'])
+}
 
 }
 
-cambiaDia(){
-  return this.esDia = true
-
-}
-}

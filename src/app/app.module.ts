@@ -16,6 +16,7 @@ import { SoftskillsComponent } from './componentes/softskills/softskills.compone
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -33,6 +34,7 @@ import { LoginComponent } from './componentes/login/login.component';
     ProyectosComponent,
     HomeComponent,
     LoginComponent
+    
    
   ],
   imports: [
@@ -40,7 +42,8 @@ import { LoginComponent } from './componentes/login/login.component';
     AppRoutingModule,
     NgxChartsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
