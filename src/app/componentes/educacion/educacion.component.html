@@ -1,92 +1,20 @@
-<!--Educacion-->
-<section id="Educacion">
-    <div class="card mt-5 d-flex w-75  mx-auto" >
-      
-      <div class="card-body">
-        <h5 class="card-title">Educaciòn</h5>
-         <div class="container d-flex align-items-center mt-5"> 
-              
-              <img src="/assets/escudo15.jpg" width="200" height="100"class="img-fluid float-left" alt="" srcset="">
-             <ul>
-                  <li>Institucion: Escuela Nº 15 Ing. Agustin Mercau</li>   
-                  <li>Titulo: Tecnico en equipos e instalaciones electromecanicas</li>
-                  <li><a href="http://catalogo.inet.edu.ar/institucion/colegio-n-15-ingeniero-agustin-mercau-3873">Escuela tecnica Nº 15 Ing. Agustin Mercau</a></li>  
-             </ul>
-         </div>
-         <div class="container d-flex align-items-center mt-5"> 
-              
-          <img src="/assets/UNSL.png" width="200" height="100" class="img-fluid float-left " alt="" srcset="">
-         <ul>
-              <li>Institucion: Universidad Nacional de San Luis</li>   
-              <li>Ingenieria Electricista-Electronica</li>
-              <li><a href="http://www.fcejs.unsl.edu.ar/">Universidad Nacional de San Luis, Facultad de ingeniaria</a></li>  
-         </ul>
-         </div>
-  
-         <div class="container d-flex align-items-center mt-5"> 
-              
-          <img src="/assets/argprograma.jpg" width="200" height="100"class="img-fluid float-left" alt="" srcset="">
-         <ul>
-              <li>Institucion: Ministerio de Economia, INTI</li>   
-              <li>Periodo: 2022</li>
-              <li><button type="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Certificado de aprobacion #seprogramar 
-                </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">#SeProgramar</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                          <img src="/assets/seprogramar.jpg" width="2000" height="1500"class="img-fluid float-left" alt="" srcset="">
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>  
-         </ul>
-         </div>
-      
-         <div class="container d-flex align-items-center mt-5"> 
-              
-          <img src="/assets/argprograma.jpg" width="200" height="100"class="img-fluid float-left" alt="" srcset="">
-         <ul>
-              <li>Institucion: Ministerio de Economia, INTI</li>   
-              <li>Periodo: 2023</li>
-              <li><button type="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                  Certificado de aprobacion #YoProgramo 
-                </button>
-                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">#YoProgramo</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                          <img src="/assets/seprogramar.jpg" width="2000" height="1500"class="img-fluid float-left" alt="" srcset="">
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>  
-         </ul>
-         </div> 
-  
-  
-        
+<section class="contenedor">
+  <div class="contenedor__barra-titulo">
+      <h2>Educación</h2>
+      <i class="fa-solid fa-plus" mat-button (click)="openDialogNew()" *ngIf="isLogged"></i>
+  </div>
+  <div class="contenedor__child" *ngFor="let educacion of educaciones">
+      <img [src]="educacion.imgEducacion" [alt]="educacion.nombreEducacion">
+      <div class="descripcion-puesto">
+          <h3>{{educacion.nombreEducacion}}</h3>
+          <h4 class="descripcion-puesto__info">{{educacion.establecimiento}}</h4>
+          <h5 class="descripcion-puesto__info">{{educacion.startEducacion}} - {{educacion.endEducacion}}</h5>
+          <p>{{educacion.descripcionEducacion}}</p>
       </div>
-      
-    </div>
-  </section>
-    <!--Educacion-->
+      <div class="iconos-edicion">
+          <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialogEdit(educacion.id)"></i>
+          <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(educacion.id)"></i>
+      </div>
+  </div>
+
+</section>

@@ -1,38 +1,24 @@
-<!--Proyectos-->
-<section>
-    <div class="card mt-5 d-flex w-75  mx-auto" >
-   
-      <div class="card-body">
-        <h5 class="card-title">Proyectos</h5>
-         <div class="container d-flex mt-5"> 
-              
-              <img src="/assets/pngegg.png" width="200" height="100"class="img-fluid float-left" alt="" srcset="">
-             <ul>
-                  <li>Proyecto: Portfolio Web</li>   
-                  <li>Periodo: 2005-2007</li>
-                  <li>Puesto: Desarrollador de capacitaciones P&G University</li>  
-             </ul>
+<section class="contenedor">
+     <div class="contenedor__barra-titulo">
+         <h2>Proyectos</h2>
+         <i class="fa-solid fa-plus" mat-button (click)="openDialogNew()" *ngIf="isLogged"></i>
+     </div>
+     <div class="contenedor__child" *ngFor="let proyecto of proyectos">
+         <img [src]="proyecto.imgProyecto" [alt]="proyecto.nombreProyecto">
+         <div class="descripcion-puesto">
+             <h3>{{proyecto.nombreProyecto}}</h3>
+             <div>
+                 <p class="descripcion-puesto__url">
+                     <a [href]="proyecto.urlRepo" target="_blank">Repositorio</a>
+                     -
+                     <a [href]="proyecto.urlDeploy" target="_blank">Deploy</a>
+                 </p>
+                 <p>{{proyecto.descripcionProyecto}}</p>
+             </div>
          </div>
-         <div class="container d-flex align-items-center"> 
-              
-          <img src="/assets/servcom.png" width="200" height="100" class="img-fluid float-left " alt="" srcset="">
-         <ul>
-              <li>Proyecto: Radio Online</li>   
-              <li>Periodo: 2007-2011</li>
-              <li>Puesto: Coordinador de equipo de instlaciòn de redes wifi y sistemas afines</li>  
-         </ul>
+         <div class="iconos-edicion">
+             <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialogEdit(proyecto.id)"></i>
+             <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(proyecto.id)"></i>
          </div>
-         <div class="container d-flex align-items-center"> 
-              
-          <img src="/assets/tenaris.png" width="200" height="100"class="img-fluid float-left" alt="" srcset="">
-         <ul>
-              <li>Proyecto: CRM de whassapp</li>   
-              <li>Periodo: 2012-2023</li>
-              <li>Puesto: Operacion, mantenimiento y programacion de equipos CNC</li>  
-         </ul>
-         </div>
-      
-      </div>
-    </div>
-  </section>
-    <!--Proyectos-->
+     </div>
+ </section>

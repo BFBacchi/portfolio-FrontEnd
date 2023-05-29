@@ -1,38 +1,48 @@
-<!--Experiencia-->
-<section id="Experiencia">
-    <div class="card mt-5 d-flex w-75  mx-auto" id="#Experiencia">
-     
-      <div class="card-body">
-        <h5 class="card-title">Experiencia</h5>
-         <div class="container d-flex mt-5"> 
-              
-              <img src="/assets/pngegg.png" width="200" height="100"class="img-fluid float-left" alt="" srcset="">
-             <ul>
-                  <li>Empresa: Procter & Gamble</li>   
-                  <li>Periodo: 2005-2007</li>
-                  <li>Puesto: Desarrollador de capacitaciones P&G University</li>  
-             </ul>
+<!--<section class="contenedor">
+     <div class="contenedor__barra-titulo">
+         <h2>Experiencia</h2>
+         <i class="fa-solid fa-plus" mat-button (click)="openDialogNew()" *ngIf="isLogged"></i>
+     </div>
+     <div class="contenedor__child" *ngFor="let experiencia of experiencias">
+         <img [src]="experiencia.imgExp" [alt]="experiencia.nombreExperiencia">
+         <div class="descripcion-puesto">
+             <h3>{{experiencia.nombreExperiencia}}</h3>
+             <h4 class="descripcion-puesto__info">{{experiencia.compania}}</h4>
+             <h5 class="descripcion-puesto__info">{{experiencia.startExp}} - {{experiencia.endExp}}</h5>
+             <p>{{experiencia.descripcionExperiencia}}</p>
          </div>
-         <div class="container d-flex align-items-center"> 
-              
-          <img src="/assets/servcom.png" width="200" height="100" class="img-fluid float-left " alt="" srcset="">
-         <ul>
-              <li>Empresa: Servcom</li>   
-              <li>Periodo: 2007-2011</li>
-              <li>Puesto: Coordinador de equipo de instlaciòn de redes wifi y sistemas afines</li>  
-         </ul>
+         <div class="iconos-edicion">
+             <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialogEdit(experiencia.id)"></i>
+             <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(experiencia.id)"></i>
          </div>
-         <div class="container d-flex align-items-center"> 
-              
-          <img src="/assets/tenaris.png" width="200" height="100"class="img-fluid float-left" alt="" srcset="">
-         <ul>
-              <li>Empresa: Tenaris</li>   
-              <li>Periodo: 2012-2023</li>
-              <li>Puesto: Operacion, mantenimiento y programacion de equipos CNC</li>  
-         </ul>
-         </div>
-      
+     </div>
+ </section>-->
+ <section id="Experiencia">
+  <div class="card mt-5 d-flex w-75  mx-auto" id="#Experiencia">
+    
+    <div class="card-body">
+      <h3 class="card-title">Experiencia</h3>
+      <div class="add-exp">
+        <i class="bi bi-plus-circle d-flex justify-content-end"  (click)="openDialogNew()" *ngIf="isLogged"></i>
+
       </div>
+      <div class="container d-flex align-items-center" *ngFor="let experiencia of experiencias"> 
+            
+            <img [src]="experiencia.imgExp" [alt]="experiencia.nombreExperiencia" width="200" height="100" class="img-fluid float-left" srcset="">
+           <ul>
+                <li>Empresa: {{experiencia.compania}}</li>   
+                <li>Periodo: {{experiencia.startExp}} - {{experiencia.endExp}}</li>
+                <li>Puesto: {{experiencia.nombreExperiencia}}</li>  
+                <li>Descripcion: {{experiencia.descripcionExperiencia}}</li>  
+           </ul>
+           <div class="d-flex mx-auto">
+            <i class="bi bi-pencil-square" *ngIf="isLogged" (click)="openDialogEdit(experiencia.id)"></i>
+            <i class="bi bi-trash-fill" *ngIf="isLogged" (click)="delete(experiencia.id)"></i>
+          </div>
+      </div>
+       
+    
     </div>
-  </section>
-    <!--Experiencia-->
+  </div>
+</section>
+  

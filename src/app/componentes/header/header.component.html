@@ -36,7 +36,8 @@
     </ul>
 
     <div class="col-md-2-ml-2 text-end me-4">
-      <a  href="/login" type="button" class="btn btn-outline-primary me-3">Login</a>
+      <a  *ngIf="!isLogged" href="/login" type="button" class="btn btn-outline-primary me-3">Login</a>
+      <a  *ngIf="isLogged"  type="button" class="btn btn-outline-primary me-3" (click)="onLogout()">Logout</a>
       
       
     </div>

@@ -1,5 +1,13 @@
-div{
-    background-color: #FEE140;
-    background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+@import url(../experiencia/experiencia.component.css);
 
+.descripcion-puesto__url a{
+    font-weight: bold;
+}
+
+.descripcion-puesto p{
+    margin: 0;
+}
+
+.descripcion-puesto > div{
+    margin-top: 1em;
 }

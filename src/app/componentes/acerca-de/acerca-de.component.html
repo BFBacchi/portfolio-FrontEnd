@@ -1,0 +1,20 @@
+<!--Acerca de mi-->
+<section id="AboutMe">
+  <div class="card mt-5 d-flex w-75 mx-auto border-primary">
+    <div class="card-body d-flex justify-content-md-between">
+      <div>
+        <h3 class="card-header">Acerca de mi</h3>
+      </div>
+      <div class="acerca">
+        <i
+          class="bi bi-pencil-square"
+          *ngIf="isLogged"
+          (click)="openDialogEdit()"
+        ></i>
+      </div>
+    </div>
+    <div class="p-3">
+      {{ persona.sobreMi }}
+    </div>
+  </div>
+</section>
