@@ -33,6 +33,7 @@ import { ModalEducacionComponent } from './componentes/educacion/modal-educacion
 import { EditAcercaDeComponent } from './componentes/acerca-de/edit-acerca-de/edit-acerca-de.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { interceptorProvider } from './service/interceptor.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { interceptorProvider } from './service/interceptor.service';
     MatSliderModule,
     MatSnackBarModule,
     MatButtonModule,
-    MatDialogModule,
+    MatDialogModule
+    
   ],
   providers: [
     interceptorProvider

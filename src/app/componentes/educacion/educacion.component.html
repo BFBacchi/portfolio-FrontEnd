@@ -1,20 +1,29 @@
-<section class="contenedor">
-  <div class="contenedor__barra-titulo">
-      <h2>Educación</h2>
-      <i class="fa-solid fa-plus" mat-button (click)="openDialogNew()" *ngIf="isLogged"></i>
-  </div>
-  <div class="contenedor__child" *ngFor="let educacion of educaciones">
-      <img [src]="educacion.imgEducacion" [alt]="educacion.nombreEducacion">
-      <div class="descripcion-puesto">
-          <h3>{{educacion.nombreEducacion}}</h3>
-          <h4 class="descripcion-puesto__info">{{educacion.establecimiento}}</h4>
-          <h5 class="descripcion-puesto__info">{{educacion.startEducacion}} - {{educacion.endEducacion}}</h5>
-          <p>{{educacion.descripcionEducacion}}</p>
+<section id="Educacion">
+    <div class="card mt-5 d-flex w-75  mx-auto" id="#Educacion">
+      
+      <div class="card-body">
+        <h3 class="card-title">Educacion</h3>
+        <div class="add-edu">
+          <i class="bi bi-plus-circle d-flex justify-content-end"  (click)="openDialogNew()" *ngIf="isLogged"></i>
+  
+        </div>
+        <div class="container d-flex align-items-center" *ngFor="let educacion of educaciones"> 
+              
+              <img [src]="educacion.imgEducacion" [alt]="educacion.nombreEducacion" width="200" height="100" class="img-fluid float-left" srcset="">
+             <ul>
+                  <li>Titulo: {{educacion.nombreEducacion}}</li>   
+                  <li>Institucion: {{educacion.establecimiento}}</li>
+                  <li>Periodo: {{educacion.startEducacion}} - {{educacion.endEducacion}}</li>  
+                  <li>Descripcion: {{educacion.descripcionEducacion}}</li>  
+             </ul>
+             <div class="d-flex mx-auto">
+              <i class="bi bi-pencil-square" *ngIf="isLogged" (click)="openDialogEdit(educacion.id)"></i>
+              <i class="bi bi-trash-fill" *ngIf="isLogged" (click)="delete(educacion.id)"></i>
+            </div>
+        </div>
+         
+      
       </div>
-      <div class="iconos-edicion">
-          <i class="fa-solid fa-pen" *ngIf="isLogged" (click)="openDialogEdit(educacion.id)"></i>
-          <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(educacion.id)"></i>
-      </div>
-  </div>
-
-</section>
+    </div>
+  </section>
+    
