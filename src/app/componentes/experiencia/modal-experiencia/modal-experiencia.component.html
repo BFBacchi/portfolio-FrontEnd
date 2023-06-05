@@ -1,6 +1,6 @@
 <form novalidate #f="ngForm">
-    <h2 mat-dialog-title>Cargar nueva experiencia</h2>
-    <div class="form-container">
+    <h2 >Cargar nueva experiencia</h2>
+    <div class=".form-container">
         
         <label for="nombreExperiencia">Nombre del puesto
             <input type="text" id="nombreExperiencia" name="nombreExperiencia" placeholder="Ej: Gerente" [(ngModel)]="nombreExperiencia" required/>
@@ -27,4 +27,5 @@
         <button mat-button (click)="onNoClick()">Cancelar</button>
         <button mat-button cdkFocusInitial class="send-button" (click)="onCreate()">Enviar</button>
     </div>
+    <mat-slider></mat-slider>
 </form>

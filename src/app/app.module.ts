@@ -17,7 +17,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ModalSkillsComponent } from './componentes/skills/modal-skills/modal-skills.component';
 import { EditSkillsComponent } from './componentes/skills/edit-skills/edit-skills.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
@@ -33,7 +33,7 @@ import { ModalEducacionComponent } from './componentes/educacion/modal-educacion
 import { EditAcercaDeComponent } from './componentes/acerca-de/edit-acerca-de/edit-acerca-de.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { interceptorProvider } from './service/interceptor.service';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -61,17 +61,19 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({}),
-    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    NgCircleProgressModule.forRoot({}),
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
     MatFormFieldModule,
+    ReactiveFormsModule,
+    CommonModule,
     MatInputModule,
     MatSelectModule,
     MatSliderModule,
-    MatSnackBarModule,
-    MatButtonModule,
-    MatDialogModule
+    MatSnackBarModule
     
   ],
   providers: [

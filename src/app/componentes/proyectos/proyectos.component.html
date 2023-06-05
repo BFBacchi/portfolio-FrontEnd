@@ -1,4 +1,4 @@
-<section class="contenedor">
+<!--<section class="contenedor">
      <div class="contenedor__barra-titulo">
          <h2>Proyectos</h2>
          <i class="fa-solid fa-plus" mat-button (click)="openDialogNew()" *ngIf="isLogged"></i>
@@ -21,4 +21,32 @@
              <i class="fa-solid fa-trash" *ngIf="isLogged" (click)="delete(proyecto.id)"></i>
          </div>
      </div>
- </section>
+ </section>-->
+ <section id="Proyectos">
+    <div class="card mt-5 d-flex w-75  mx-auto" id="#Proyectos">
+      
+      <div class="card-body">
+        <h3 class="card-title">Proyectos</h3>
+        <div class="add-exp">
+          <i class="bi bi-plus-circle d-flex justify-content-end"  (click)="openDialogNew()" *ngIf="isLogged"></i>
+  
+        </div>
+        <div class="container d-flex align-items-center" *ngFor="let proyecto of proyectos"> 
+              
+              <img [src]="proyecto.imgProyecto" [alt]="proyecto.nombreProyecto" width="200" height="100" class="img-fluid float-left" srcset="">
+              <ul>
+                <li>Repositorio: <a href="{{proyecto.urlRepo}}" target="_blank">Enlace al Repositorio</a></li>
+                <li>Deployment: <a href="{{proyecto.urlDeploy}}" target="_blank">Enlace al Deployment</a></li>
+                <li>Descripción: {{proyecto.descripcionProyecto}}</li>
+            </ul>
+             <div class="d-flex mx-auto">
+              <i class="bi bi-pencil-square" *ngIf="isLogged" (click)="openDialogEdit(proyecto.id)"></i>
+              <i class="bi bi-trash-fill" *ngIf="isLogged" (click)="delete(proyecto.id)"></i>
+            </div>
+        </div>
+         
+      
+      </div>
+    </div>
+  </section>
+    

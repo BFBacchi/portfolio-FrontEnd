@@ -1,6 +1,6 @@
-@import url(../experiencia/experiencia.component.css);
+/*@import url(../experiencia/experiencia.component.css);
 
-/* Skills */
+ Skills */
 
 circle-progress{
   display: flex;
@@ -19,4 +19,9 @@ circle-progress{
   flex-direction: column;
   min-width: 300px;
   margin: 40px;
+}
+i{
+  color: blue;
+font-size: 24px;
+cursor: pointer;
 }
